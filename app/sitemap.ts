@@ -1,7 +1,9 @@
 import type { MetadataRoute } from "next"
-import { createClient } from "@/lib/supabase/server"
 
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+export const dynamic = "force-static"
+export const revalidate = 3600 // Revalidate every hour
+
+export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://v0-e-mailitary-website-build.vercel.app"
 
   // Static pages
@@ -50,25 +52,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
   ]
 
-  // Dynamic news pages
-  try {
-    const supabase = await createClient()
-    const { data: news } = await supabase
-      .from("news")
-      .select("id, updated_at")
-      .eq("published", true)
-      .order("published_at", { ascending: false })
-
-    const newsPages: MetadataRoute.Sitemap = (news || []).map((item) => ({
-      url: `${baseUrl}/news/${item.id}`,
-      lastModified: new Date(item.updated_at),
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    }))
-
-    return [...staticPages, ...newsPages]
-  } catch (error) {
-    console.error("[v0] Error generating sitemap:", error)
-    return staticPages
-  }
+  return staticPages
 }
