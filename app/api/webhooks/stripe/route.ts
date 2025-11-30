@@ -3,17 +3,26 @@ import { NextResponse } from "next/server"
 import Stripe from "stripe"
 import { createClient } from "@supabase/supabase-js"
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: "2024-11-20.acacia",
-})
-
-const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET!
-
-// Use service role key for webhook to bypass RLS
-const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.SUPABASE_SERVICE_ROLE_KEY!)
+export const dynamic = "force-dynamic"
 
 export async function POST(req: Request) {
   try {
+    const stripeSecretKey = process.env.STRIPE_SECRET_KEY
+    const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
+    const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY
+
+    if (!stripeSecretKey || !webhookSecret || !supabaseUrl || !supabaseServiceKey) {
+      console.error("[v0] Missing required environment variables")
+      return NextResponse.json({ error: "Configuration error" }, { status: 500 })
+    }
+
+    const stripe = new Stripe(stripeSecretKey, {
+      apiVersion: "2024-11-20.acacia",
+    })
+
+    const supabase = createClient(supabaseUrl, supabaseServiceKey)
+
     const body = await req.text()
     const headersList = await headers()
     const signature = headersList.get("stripe-signature")
