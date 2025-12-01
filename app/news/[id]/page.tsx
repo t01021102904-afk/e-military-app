@@ -16,8 +16,9 @@ function sanitizeHtml(text: string): string {
 export default async function NewsArticlePage({
   params,
 }: {
-  params: { id: string }
+  params: Promise<{ id: string }>
 }) {
+  const { id } = await params
   const supabase = await createClient()
 
   const { data: article } = await supabase
@@ -28,7 +29,7 @@ export default async function NewsArticlePage({
         display_name
       )
     `)
-    .eq("id", params.id)
+    .eq("id", id)
     .eq("published", true)
     .single()
 
