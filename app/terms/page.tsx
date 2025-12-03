@@ -147,6 +147,23 @@ export default function TermsPage() {
               You agree to indemnify and hold harmless E-Mailitary, its officers, volunteers, and agents from any
               claims, damages, or expenses arising from your use of the service or violation of these Terms.
             </p>
+            <h3 className="text-xl font-semibold mt-6 mb-3">User Responsibility and Indemnification</h3>
+            <p>
+              Users are solely responsible for all activities related to their use of E-Mailitary services. If any
+              financial loss occurs to E-Mailitary or its members due to a user's intentional or negligent actions, the
+              user shall fully indemnify and compensate for such damages.
+            </p>
+            <p className="mt-4">
+              If E-Mailitary becomes directly or indirectly involved in litigation, disputes, investigations, or other
+              legal proceedings due to a user's actions, the user shall defend and hold E-Mailitary harmless, bearing
+              all costs to ensure that E-Mailitary does not suffer legal or financial harm. This includes attorney fees,
+              court costs, settlement amounts, and related expenses.
+            </p>
+            <p className="mt-4">
+              For purposes of this clause, "E-Mailitary" includes the founder, officers, core leaders, and all
+              individuals involved in organizational operations. Users have a duty to protect these individuals from
+              personal property damages resulting from the user's actions.
+            </p>
           </section>
 
           <section>
@@ -194,7 +211,62 @@ export default function TermsPage() {
                 <strong>Use of Funds:</strong> All donations are used immediately for operational purposes related to
                 volunteer activities, including printing, postage, website maintenance, and administrative costs.
               </li>
+              <li>
+                <strong>Donation Account:</strong> Donations are received through a dedicated personal account used
+                exclusively for receiving and managing donations. This account is separate from general operating funds
+                and is used solely for donation receipts and organizational purposes.
+              </li>
             </ul>
+
+            <h3 className="text-xl font-semibold mt-6 mb-3">Donation Usage</h3>
+            <p>Donations are used for the following purposes:</p>
+            <ul className="list-disc pl-6 space-y-2">
+              <li>
+                <strong>Printing Costs:</strong> Production of flyers, posters, informational materials, and other
+                printed materials
+              </li>
+              <li>
+                <strong>Personnel Costs:</strong> Project management, event coordination, volunteer management, and
+                other necessary human resources
+              </li>
+              <li>
+                <strong>Advertising and Promotion:</strong> Online advertising, social media promotion, offline
+                promotional materials, etc.
+              </li>
+              <li>
+                <strong>Website Development and Maintenance:</strong> Website creation, hosting, updates, and technical
+                support
+              </li>
+              <li>
+                <strong>Equipment and Supplies:</strong> Purchase of equipment and materials necessary for event
+                operations and activities
+              </li>
+              <li>
+                <strong>Operating Expenses:</strong> Domain costs, software subscription fees, communication costs, and
+                other basic organizational operating expenses
+              </li>
+              <li>
+                <strong>Education and Program Development:</strong> Workshops, seminars, community program creation,
+                etc.
+              </li>
+              <li>
+                <strong>Content Creation:</strong> Photography, videography, and other promotional and documentary
+                content creation
+              </li>
+              <li>
+                <strong>Design Outsourcing:</strong> Branding, poster design, material design, and other external
+                designer services
+              </li>
+              <li>
+                <strong>Volunteer Activity Supplies:</strong> Purchase of supplies and consumables necessary for
+                volunteer activities
+              </li>
+            </ul>
+            <p className="mt-4">
+              Donations are executed transparently according to the above items and are used exclusively for activities
+              aligned with the organization's purpose and community development.
+            </p>
+
             <p className="mt-4">
               By clicking the Donate button, you acknowledge that you have read and agree to these donation terms.
             </p>
