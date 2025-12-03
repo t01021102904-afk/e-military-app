@@ -37,6 +37,11 @@ export default function PrivacyPolicyPage() {
                 <strong>Automatically Collected:</strong> Letter content, submission timestamps, IP addresses (for
                 security and service improvement)
               </li>
+              <li>
+                <strong>Donation Information:</strong> For donors, we collect name and email address for the purpose of
+                sending donation confirmation emails. Payment information is processed securely by Stripe and is never
+                stored on our servers.
+              </li>
             </ul>
           </section>
 
@@ -48,6 +53,7 @@ export default function PrivacyPolicyPage() {
               <li>Content moderation and filtering inappropriate content</li>
               <li>Service usage analytics and statistics</li>
               <li>Important service announcements via email (optional, only for critical updates)</li>
+              <li>Processing and acknowledging donations, sending donation confirmation emails</li>
             </ul>
           </section>
 
@@ -145,6 +151,59 @@ export default function PrivacyPolicyPage() {
             <p>
               This Privacy Policy is governed by the laws of the State of New York and applicable federal laws, without
               regard to conflict of law principles.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-bold mt-8 mb-4">13. Donation Management and Transparency</h2>
+            <p>E-Mailitary manages donor contributions transparently and responsibly:</p>
+            <ul className="list-disc pl-6 space-y-2">
+              <li>
+                <strong>Dedicated Donation Account:</strong> All donations are received through a dedicated personal
+                account that is used exclusively for receiving and managing donations. This account is separate from
+                general operating funds and is used solely for donation receipts and organizational purposes.
+              </li>
+              <li>
+                <strong>Transparent Usage:</strong> Donations are used carefully and transparently for maintaining
+                organizational activities and achieving social purposes, including printing, postage, website
+                maintenance, and administrative costs.
+              </li>
+              <li>
+                <strong>Specific Usage Categories:</strong> Donations are allocated to the following purposes:
+                <ul className="list-disc pl-6 mt-2 space-y-1">
+                  <li>Printing costs (flyers, posters, informational materials)</li>
+                  <li>Personnel costs (project management, event coordination, volunteer management)</li>
+                  <li>Advertising and promotional expenses (online ads, social media, offline materials)</li>
+                  <li>Website development and maintenance costs</li>
+                  <li>Equipment and supplies for event operations</li>
+                  <li>Operating expenses (domain, software subscriptions, communication costs)</li>
+                  <li>Education and program development (workshops, seminars, community programs)</li>
+                  <li>Content creation (photography, videography for promotion and documentation)</li>
+                  <li>Design outsourcing (branding, poster design, materials design)</li>
+                  <li>Volunteer activity supplies and consumables</li>
+                </ul>
+              </li>
+              <li>
+                <strong>Donor Protection:</strong> Donors understand and agree that:
+                <ul className="list-disc pl-6 mt-2 space-y-1">
+                  <li>
+                    If damages occur during organizational activities due to a donor's or participant's actions, the
+                    responsible party may be required to compensate for such damages.
+                  </li>
+                  <li>
+                    Organizational leadership (including founders, officers, and core leaders) is legally protected from
+                    personal harm resulting from donor or user actions.
+                  </li>
+                  <li>
+                    Donations are used carefully and transparently for maintaining organizational activities and
+                    achieving social purposes.
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <p className="mt-4">
+              All donations are executed transparently according to the organization's mission and community development
+              objectives.
             </p>
           </section>
         </div>
