@@ -1,73 +1,46 @@
 import { Header } from "@/components/header"
-import { LetterForm } from "@/components/write/letter-form"
-import { redirect } from "next/navigation"
-import { createClient } from "@/lib/supabase/server"
-import { Footer } from "@/components/footer"
-import type { Metadata } from "next"
+import { Button } from "@/components/ui/button"
+import Link from "next/link"
+import { CheckCircle } from "lucide-react"
 
-export const metadata: Metadata = {
-  title: "Write a Letter - E-Mailitary",
-  description: "Write a heartfelt letter to support US military troops. Your words of encouragement make a difference.",
-  alternates: {
-    canonical: "https://www.e-mailitary.com/write",
-  },
-}
-
-export default async function WritePage() {
-  const supabase = await createClient()
-  const {
-    data: { user },
-  } = await supabase.auth.getUser()
-
-  if (!user) {
-    redirect("/auth/login")
-  }
-
+export default function SuccessPage() {
   return (
-    <div className="flex min-h-screen flex-col bg-black">
+    <div className="flex min-h-screen flex-col">
       <Header />
-      <main className="flex-1">
-        <div className="container mx-auto max-w-4xl px-6 py-12">
-          <div className="space-y-8">
-            <div className="space-y-3 text-center">
-              <h1 className="text-4xl font-bold tracking-tight sm:text-5xl text-white">Write a Letter to Our Troops</h1>
-              <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-                Your words of encouragement can make a real difference in a soldier's day. Share your support,
-                gratitude, and positive thoughts.
+      <main className="flex-1 flex items-center justify-center py-12">
+        <div className="container max-w-2xl">
+          <div className="flex flex-col items-center text-center space-y-6">
+            <CheckCircle className="h-20 w-20 text-green-600" />
+
+            <div className="space-y-2">
+              <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl">Letter Submitted Successfully!</h1>
+              <p className="text-muted-foreground text-lg max-w-[600px]">
+                Thank you for supporting our troops. Your letter will be reviewed by our volunteers and, once approved,
+                will be printed and included in the next batch of 1,000 letters sent to military bases.
               </p>
             </div>
 
-            <div className="bg-gray-900/50 p-6 rounded-xl border border-cyan-500/30">
-              <h3 className="font-semibold text-lg mb-3 text-cyan-400">Guidelines:</h3>
-              <ul className="space-y-2 text-sm text-gray-300">
-                <li className="flex items-start gap-2">
-                  <span className="text-cyan-400 mt-0.5">•</span>
-                  <span>Minimum 500 characters required</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-cyan-400 mt-0.5">•</span>
-                  <span>Be respectful and encouraging</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-cyan-400 mt-0.5">•</span>
-                  <span>Avoid political topics, military intelligence requests, or inappropriate content</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-cyan-400 mt-0.5">•</span>
-                  <span>General blessings like "God bless you" or "Pray for you" are welcome</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-cyan-400 mt-0.5">•</span>
-                  <span>No requests for money or personal information</span>
-                </li>
-              </ul>
+            <div className="bg-muted p-6 rounded-lg border max-w-md">
+              <h3 className="font-semibold mb-2">What happens next?</h3>
+              <ol className="list-decimal list-inside space-y-2 text-sm text-muted-foreground text-left">
+                <li>Volunteers review your letter for content guidelines</li>
+                <li>Approved letters are professionally printed</li>
+                <li>Letters are bundled in groups of 1,000</li>
+                <li>Batches are shipped to military bases</li>
+              </ol>
             </div>
 
-            <LetterForm />
+            <div className="flex gap-4">
+              <Button asChild>
+                <Link href="/my-letters">View My Letters</Link>
+              </Button>
+              <Button variant="outline" asChild>
+                <Link href="/write">Write Another Letter</Link>
+              </Button>
+            </div>
           </div>
         </div>
       </main>
-      <Footer />
     </div>
   )
 }
