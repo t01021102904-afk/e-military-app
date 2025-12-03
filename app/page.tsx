@@ -6,6 +6,13 @@ import { LetterImpact } from "@/components/home/letter-impact"
 import { AdminSetupBanner } from "@/components/admin-setup-banner"
 import { Footer } from "@/components/footer"
 import { createClient } from "@/lib/supabase/server"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://www.e-mailitary.com",
+  },
+}
 
 export default async function HomePage() {
   const supabase = await createClient()
