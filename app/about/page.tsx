@@ -3,6 +3,16 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import Image from "next/image"
 import { createClient } from "@/lib/supabase/server"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "About E-Mailitary - Support Our Troops",
+  description:
+    "Learn about E-Mailitary's mission to connect people with US military service members through heartfelt letters of support and encouragement.",
+  alternates: {
+    canonical: "https://www.e-mailitary.com/about",
+  },
+}
 
 export default async function AboutPage() {
   const supabase = await createClient()
