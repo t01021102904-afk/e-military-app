@@ -54,6 +54,14 @@ export function Hero({ heroData }: { heroData?: HeroData }) {
       {/* Main content */}
       <div className="container px-4 md:px-6 relative z-10">
         <div className="flex flex-col items-center space-y-8 text-center">
+          <div className="space-y-3 max-w-4xl mb-4">
+            <p className="text-lg md:text-xl text-cyan-400 font-semibold">Welcome to E-Mailitary</p>
+            <p className="text-base md:text-lg text-white/80 font-light max-w-3xl mx-auto">
+              E-Mailitary is a nonprofit writing project where anyone can send letters to U.S. service members. Our
+              mission is to connect people with military heroes through kindness and encouragement.
+            </p>
+          </div>
+
           <div className="space-y-6 max-w-4xl">
             <h1 className="text-5xl font-bold tracking-tight sm:text-6xl md:text-7xl lg:text-8xl text-white">
               {heroData?.title || "E-Mailitary"}
