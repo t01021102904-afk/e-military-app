@@ -1,5 +1,15 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Terms of Service | E-Mailitary",
+  description:
+    "E-Mailitary is a nonprofit project connecting civilians with US military soldiers through heartfelt letters of encouragement. Read our Terms of Service and Volunteer Agreement.",
+  alternates: {
+    canonical: "https://www.e-mailitary.com/terms",
+  },
+}
 
 export default function TermsPage() {
   return (
