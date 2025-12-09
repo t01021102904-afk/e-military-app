@@ -1,5 +1,15 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Privacy Policy | E-Mailitary",
+  description:
+    "E-Mailitary is a nonprofit project connecting civilians with US military soldiers through heartfelt letters of encouragement. Read our Privacy Policy and learn how we protect your data.",
+  alternates: {
+    canonical: "https://www.e-mailitary.com/privacy",
+  },
+}
 
 export default function PrivacyPolicyPage() {
   return (
