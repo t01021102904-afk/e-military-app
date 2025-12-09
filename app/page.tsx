@@ -9,6 +9,9 @@ import { createClient } from "@/lib/supabase/server"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
+  title: "E-Mailitary — Support Our Troops with Letters",
+  description:
+    "E-Mailitary is a nonprofit project connecting civilians with US military soldiers through heartfelt letters of encouragement. Write a letter today and make a difference.",
   alternates: {
     canonical: "https://www.e-mailitary.com",
   },
